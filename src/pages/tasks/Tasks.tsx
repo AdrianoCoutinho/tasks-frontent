@@ -15,9 +15,11 @@ import { useNavigate } from "react-router-dom";
 
 import { SnackBars } from "../../shared/components";
 import AppBarHeader from "../../shared/components/appbarheader/AppBarHeader";
+import { useAuthContext } from "../../shared/contexts";
 import { useAppDispatch } from "../../store/hooks";
 
 const Tasks: React.FC = () => {
+  const { logout } = useAuthContext();
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const [search, setSearch] = useState({ detail: "", arquived: false });
@@ -26,31 +28,25 @@ const Tasks: React.FC = () => {
 
   const loggedUser = () => {
     return (
-      localStorage.getItem("ReccadosLoggedUser") ||
-      sessionStorage.getItem("ReccadosLoggedUser") ||
-      ""
+      // localStorage.getItem("ReccadosLoggedUser") ||
+      // sessionStorage.getItem("ReccadosLoggedUser") ||
+      "Adriano Coutinho"
     );
   };
 
   const loggedUserName = () => {
     return (
-      localStorage.getItem("ReccadosLoggedName") ||
-      sessionStorage.getItem("ReccadosLoggedName") ||
-      ""
+      // localStorage.getItem("APP_ACCESS_TOKEN") ||
+      // sessionStorage.getItem("APP_ACCESS_TOKEN") ||
+      "Adriano Coutinho"
     );
-  };
-
-  const HandleLogout = () => {
-    localStorage.removeItem("APP_ACCESS_TOKEN");
-    sessionStorage.removeItem("APP_ACCESS_TOKEN");
-    navigate("/");
   };
 
   return (
     <React.Fragment>
       <AppBarHeader
         titleHeader={"Tasks"}
-        actionLogout={HandleLogout}
+        actionLogout={logout}
         logedUser={loggedUserName()}
         taskArquivedLength={tasksArquivedCount}
         taskLength={tasksTotalCount}
