@@ -3,27 +3,15 @@
 # Alterar o .env.example para .env e colocar os dados necessários
 
 ```
-PORT= #porta para rodar aplicação
-DB_USER= #usuario do banco de dados
-DB_PASS= #senha do banco de dados
-DB_HOST= #host do banco de dados
-DB_NAME= #nome do banco de dados
-JWT_SECRET= #senha secreta para o token
-TIMEAUTH= #segundos para expirar token
-apiEnv= #mudar para "production" caso faça o deploy
+VITE_API_URL= #mude para o link onde está hospedada a API
 ```
-
-### Você poode utilizar o site render para criar um banco de dados gratuito -> https://render.com/
 
 ### Utilize o comando "npm i" para rodar o projeto (necessita ter o node.js instalado -> https://nodejs.org/en/download )
 ``` npm i ``` 
 
-### Após utilize o comando "npm run migration:run" para rodar a migration e criar o banco de dados, ele irá ser criado no schema public.
-``` npm run migration:run ``` 
-
-
 ### O próximo passo é utilizar o comando "npm run dev" para rodar a aplicação e ela estará pronta para ser usada.
+
 ``` npm run dev ``` 
 
-# FrontEnd -> https://github.com/AdrianoCoutinho/tasks-frontent
+# BackEnd -> [https://github.com/AdrianoCoutinho/tasks-frontent](https://github.com/AdrianoCoutinho/tasks-backend)
 
