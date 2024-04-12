@@ -26,20 +26,16 @@ const Tasks: React.FC = () => {
   const [tasksTotalCount, setTasksTotalCount] = useState(0);
   const [tasksArquivedCount, setTasksArquivedCount] = useState(0);
 
-  const loggedUser = () => {
-    return (
-      // localStorage.getItem("ReccadosLoggedUser") ||
-      // sessionStorage.getItem("ReccadosLoggedUser") ||
-      "Adriano Coutinho"
-    );
-  };
-
   const loggedUserName = () => {
-    return (
-      // localStorage.getItem("APP_ACCESS_TOKEN") ||
-      // sessionStorage.getItem("APP_ACCESS_TOKEN") ||
-      "Adriano Coutinho"
-    );
+    const result =
+      localStorage.getItem("APP_ACCESS_TOKEN") ||
+      sessionStorage.getItem("APP_ACCESS_TOKEN") ||
+      "";
+
+    const payloadBase64 = result.split(".")[1];
+    const payload = JSON.parse(atob(payloadBase64));
+
+    return payload.name;
   };
 
   return (
