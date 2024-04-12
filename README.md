@@ -1,30 +1,29 @@
-# React + TypeScript + Vite
+--- PARA RODAR O PROJETO ---
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Alterar o .env.example para .env e colocar os dados necessários
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```
+PORT= #porta para rodar aplicação
+DB_USER= #usuario do banco de dados
+DB_PASS= #senha do banco de dados
+DB_HOST= #host do banco de dados
+DB_NAME= #nome do banco de dados
+JWT_SECRET= #senha secreta para o token
+TIMEAUTH= #segundos para expirar token
+apiEnv= #mudar para "production" caso faça o deploy
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Você poode utilizar o site render para criar um banco de dados gratuito -> https://render.com/
+
+### Utilize o comando "npm i" para rodar o projeto (necessita ter o node.js instalado -> https://nodejs.org/en/download )
+``` npm i ``` 
+
+### Após utilize o comando "npm run migration:run" para rodar a migration e criar o banco de dados, ele irá ser criado no schema public.
+``` npm run migration:run ``` 
+
+
+### O próximo passo é utilizar o comando "npm run dev" para rodar a aplicação e ela estará pronta para ser usada.
+``` npm run dev ``` 
+
+# FrontEnd -> https://github.com/AdrianoCoutinho/tasks-frontent
+
