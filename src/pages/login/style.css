@@ -1,0 +1,165 @@
+
+#login-container-box {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#login-container-box img {
+    margin-bottom: 70px;
+}
+
+@media (min-width: 767px) {
+    #login-box-card {
+        padding: 0 50px;
+    }
+  }
+
+#login-box-card {
+    border-radius: 22px;
+    border: 1px solid #39445B;
+    background: linear-gradient(108deg, rgba(33, 40, 54, 0.50) 0%, rgba(33, 40, 54, 0.15) 101.49%);
+    box-shadow: 0px 0px 123.1px 0px rgba(0, 0, 0, 0.15);
+}
+
+
+#login-card-title {
+    padding: 40px 0;
+    color: #FFF;
+    text-align: center;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#login-inputs {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#login-inputs input{
+    color: #fff;
+    padding: 15px;
+    border: 1px solid #212836;
+    border-radius: 22px;
+    background: #212836;
+    font-size: 12px;
+    margin-bottom: 15px;
+    
+}
+
+#login-inputs input:hover, #login-inputs input:focus {
+    border: 1px solid rgba(255, 255, 255, 0.70);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%), #212836;
+}
+
+#login-button, #reset-password-button, #recovery-password-button {
+    cursor: pointer;
+    border-radius: 53px;
+    border: 1px solid #212836 !important;
+    background: #00E074 !important;
+    box-shadow: 0px 0px 1.324px 0px rgba(0, 0, 0, 0.15);
+    color: #101116 !important;
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#login-remember {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    }
+
+#login-card-title-reset {
+    margin-top: 42px;
+    color: #FFF;
+    text-align: center;
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#login-card-caption-reset, #login-card-caption-recovery{
+    text-align: center;
+    color: #FFF;
+    margin-top: 18px;
+    margin-bottom: 46px;
+    font-size: 14.54px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#success-card-caption-recovery {
+    text-align: center;
+    color: #FFF;
+    margin-top: 18px;
+    margin-bottom: 16px;
+    font-size: 14.54px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#return-login-button{
+    margin-top: 2px;
+    text-align: center;
+    margin-bottom: 89px;
+}
+
+#return-login-button-recovery {
+    margin-top: 2px;
+    text-align: center;
+    margin-bottom: 29px;
+}
+
+#return-login-button a, #return-login-button-recovery a{
+    color: #FFF !important;
+    text-align: center;
+    font-family: Sora;
+    font-size: 14.54px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+}
+
+.recovery-password-requisits {
+    font-size: 11px !important;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#success-password-button {
+    text-align: center;
+    font-size: 15px !important;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+    border-radius: 53px;
+    border: 1px solid #212836 !important;
+    background: #00E074 !important;
+    box-shadow: 0px 0px 1.324px 0px rgba(0, 0, 0, 0.15);
+    color: #101116 !important;
+}
