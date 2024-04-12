@@ -26,10 +26,10 @@
 
 
 #login-card-title {
-    padding: 40px 0;
+    padding: 20px 0;
     color: #FFF;
     text-align: center;
-    font-size: 23px;
+    font-size: 3rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -123,7 +123,7 @@
 #return-login-button{
     margin-top: 2px;
     text-align: center;
-    margin-bottom: 89px;
+    margin-bottom: 20px;
 }
 
 #return-login-button-recovery {
@@ -136,11 +136,15 @@
     color: #FFF !important;
     text-align: center;
     font-family: Sora;
-    font-size: 14.54px;
+    font-size: 16.54px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    text-decoration-line: underline;
+    text-decoration: none;
+}
+
+#return-login-button a:hover, #return-login-button-recovery a:hover{
+    color: #00E074 !important;
 }
 
 .recovery-password-requisits {
