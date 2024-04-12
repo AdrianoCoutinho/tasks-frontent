@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from "axios";
 import { LoginUserType } from "../shared/types";
+const apiUrl = import.meta.env.VITE_API_URL;
 
-axios.defaults.baseURL = "http://localhost:3333";
+axios.defaults.baseURL = apiUrl;
 
 export interface ApiResponse {
   ok: boolean;

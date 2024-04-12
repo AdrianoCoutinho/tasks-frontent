@@ -58,7 +58,7 @@ const Tasks: React.FC = () => {
       <Container
         maxWidth={false}
         sx={{
-          backgroundColor: "#ebeeef",
+          backgroundColor: "#212836",
           height: "auto",
           paddingBottom: "10px",
         }}
