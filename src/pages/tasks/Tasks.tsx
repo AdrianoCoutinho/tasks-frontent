@@ -11,31 +11,38 @@ import {
 } from "@mui/material";
 
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 import { SnackBars } from "../../shared/components";
 import AppBarHeader from "../../shared/components/appbarheader/AppBarHeader";
 import { useAuthContext } from "../../shared/contexts";
+import { NewTaskType } from "../../shared/types";
 import { useAppDispatch } from "../../store/hooks";
 
 const Tasks: React.FC = () => {
   const { logout } = useAuthContext();
-  const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const [search, setSearch] = useState({ detail: "", arquived: false });
   const [tasksTotalCount, setTasksTotalCount] = useState(0);
   const [tasksArquivedCount, setTasksArquivedCount] = useState(0);
+  const [task, setTask] = useState<NewTaskType>({
+    title: "",
+    description: "",
+  });
 
   const loggedUserName = () => {
-    const result =
-      localStorage.getItem("APP_ACCESS_TOKEN") ||
-      sessionStorage.getItem("APP_ACCESS_TOKEN") ||
-      "";
+    const result = localStorage.getItem("APP_ACCESS_TOKEN") || "";
 
     const payloadBase64 = result.split(".")[1];
     const payload = JSON.parse(atob(payloadBase64));
 
     return payload.name;
+  };
+
+  const HandleClearTask = () => {
+    setTask({
+      title: "",
+      description: "",
+    });
   };
 
   return (
@@ -61,14 +68,18 @@ const Tasks: React.FC = () => {
             <TextField
               fullWidth
               label="Título"
-              // value={task.detail}
-              // onChange={(ev) => {
-              //   setTask({
-              //     title: ev.target.value,
-              //     description: task.description,
-              //   });
-              // }}
+              value={task.title}
+              onChange={(ev) => {
+                setTask({
+                  title: ev.target.value,
+                  description: task.description,
+                });
+              }}
               variant="filled"
+              color="info"
+              InputProps={{
+                style: { color: "#fff" }, // Altere 'red' para a cor desejada
+              }}
             />
           </Grid>
           <Grid item xs={12} sm={12}>
@@ -77,14 +88,18 @@ const Tasks: React.FC = () => {
               multiline
               rows={2}
               label="Descrição"
-              // value={task.description}
-              // onChange={(ev) => {
-              //   setTask({
-              //     title: task.title,
-              //     description: ev.target.value,
-              //   });
-              // }}
+              value={task.description}
+              onChange={(ev) => {
+                setTask({
+                  title: task.title,
+                  description: ev.target.value,
+                });
+              }}
               variant="filled"
+              color="info"
+              InputProps={{
+                style: { color: "#fff" }, // Altere 'red' para a cor desejada
+              }}
             />
           </Grid>
           <Grid item xs={6}>
@@ -98,11 +113,7 @@ const Tasks: React.FC = () => {
             </Button>
           </Grid>
           <Grid item xs={6}>
-            <Button
-              fullWidth
-              variant="contained"
-              // onClick={HandleClearTasks}
-            >
+            <Button fullWidth variant="contained" onClick={HandleClearTask}>
               LIMPAR
             </Button>
           </Grid>
@@ -126,6 +137,10 @@ const Tasks: React.FC = () => {
                   })
                 }
                 id="fullWidth"
+                color="info"
+                InputProps={{
+                  style: { color: "#fff" }, // Altere 'red' para a cor desejada
+                }}
               />
               <FormControlLabel
                 control={

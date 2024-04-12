@@ -42,17 +42,17 @@ const AppBarHeader: React.FC<AppBarHeaderProps> = ({
               sx={{ marginRight: "22px", cursor: "pointer" }}
               badgeContent={taskArquivedLength}
               color="warning"
-              title="total de tarefas arquivados"
+              title="Total de tarefas arquivados"
             >
-              <MailIcon color="action" />
+              <MailIcon color="warning" />
             </Badge>
             <Badge
               sx={{ cursor: "pointer" }}
               badgeContent={taskLength}
               color="secondary"
-              title="total de tarefas"
+              title="Total de tarefas"
             >
-              <MailIcon color="action" />
+              <MailIcon color="secondary" />
             </Badge>
 
             <IconButton
